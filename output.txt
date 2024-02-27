@@ -1,0 +1,127 @@
+              Summer         Winter  MONTHS_OF_THE_YEAR  Rush_Hrs12to18  \
+count  207289.000000  207289.000000       207289.000000   207289.000000   
+mean        0.255199       0.263627            6.343318        0.452754   
+std         0.435974       0.440600            3.479524        0.497764   
+min         0.000000       0.000000            1.000000        0.000000   
+25%         0.000000       0.000000            3.000000        0.000000   
+50%         0.000000       0.000000            6.000000        0.000000   
+75%         1.000000       1.000000            9.000000        1.000000   
+max         1.000000       1.000000           12.000000        1.000000   
+
+       Night_Hrs21to3    HOUR_OF_DAY  BOROUGH_BRONX  BOROUGH_QUEENS  \
+count   207289.000000  207289.000000  207289.000000   207289.000000   
+mean         0.170192      13.180733       0.173685        0.287685   
+std          0.375803       5.728618       0.378839        0.452685   
+min          0.000000       0.000000       0.000000        0.000000   
+25%          0.000000       9.000000       0.000000        0.000000   
+50%          0.000000      14.000000       0.000000        0.000000   
+75%          0.000000      17.000000       0.000000        1.000000   
+max          1.000000      23.000000       1.000000        1.000000   
+
+       BOROUGH_MANHATTAN  KILLED_NOTKILLED  \
+count      207289.000000     207289.000000   
+mean            0.178273          0.001293   
+std             0.382743          0.035933   
+min             0.000000          0.000000   
+25%             0.000000          0.000000   
+50%             0.000000          0.000000   
+75%             0.000000          0.000000   
+max             1.000000          1.000000   
+
+       CONTRIBUTING_FACTOR_DRIVER_INATTENTION/DISTRACTION  \
+count                                      207289.000000    
+mean                                            0.254437    
+std                                             0.435545    
+min                                             0.000000    
+25%                                             0.000000    
+50%                                             0.000000    
+75%                                             1.000000    
+max                                             1.000000    
+
+       CONTRIBUTING_FACTOR_ALCOHOL_INVOLVEMENT  \
+count                            207289.000000   
+mean                                  0.011810   
+std                                   0.108029   
+min                                   0.000000   
+25%                                   0.000000   
+50%                                   0.000000   
+75%                                   0.000000   
+max                                   1.000000   
+
+       CONTRIBUTING_FACTOR_FOLLOWING_TOO_CLOSELY  \
+count                              207289.000000   
+mean                                    0.055304   
+std                                     0.228574   
+min                                     0.000000   
+25%                                     0.000000   
+50%                                     0.000000   
+75%                                     0.000000   
+max                                     1.000000   
+
+       VEHICLE_TYPE_CODE_STATION_WAGON/SPORT_UTILITY_VEHICLE  \
+count                                      207289.000000       
+mean                                            0.371578       
+std                                             0.483228       
+min                                             0.000000       
+25%                                             0.000000       
+50%                                             0.000000       
+75%                                             1.000000       
+max                                             1.000000       
+
+       VEHICLE_TYPE_CODE_SEDAN  VEHICLE_TYPE_CODE_PICK-UP_TRUCK  
+count            207289.000000                    207289.000000  
+mean                  0.459233                         0.027797  
+std                   0.498337                         0.164391  
+min                   0.000000                         0.000000  
+25%                   0.000000                         0.000000  
+50%                   0.000000                         0.000000  
+75%                   1.000000                         0.000000  
+max                   1.000000                         1.000000  
+Optimization terminated successfully.
+         Current function value: 0.009882
+         Iterations 11
+                           Logit Regression Results                           
+==============================================================================
+Dep. Variable:       KILLED_NOTKILLED   No. Observations:               207289
+Model:                          Logit   Df Residuals:                   207287
+Method:                           MLE   Df Model:                            1
+Date:                Mon, 26 Feb 2024   Pseudo R-squ.:               0.0008547
+Time:                        20:03:33   Log-Likelihood:                -2048.5
+converged:                       True   LL-Null:                       -2050.3
+Covariance Type:            nonrobust   LLR p-value:                   0.06120
+===========================================================================================================
+                                              coef    std err          z      P>|z|      [0.025      0.975]
+-----------------------------------------------------------------------------------------------------------
+const                                      -6.6642      0.062   -107.595      0.000      -6.786      -6.543
+CONTRIBUTING_FACTOR_ALCOHOL_INVOLVEMENT     0.8099      0.384      2.112      0.035       0.058       1.562
+===========================================================================================================
+Warning: Maximum number of iterations has been exceeded.
+         Current function value: 0.009429
+         Iterations: 35
+                           Logit Regression Results                           
+==============================================================================
+Dep. Variable:       KILLED_NOTKILLED   No. Observations:               207289
+Model:                          Logit   Df Residuals:                   207275
+Method:                           MLE   Df Model:                           13
+Date:                Mon, 26 Feb 2024   Pseudo R-squ.:                 0.04669
+Time:                        20:03:35   Log-Likelihood:                -1954.5
+converged:                      False   LL-Null:                       -2050.3
+Covariance Type:            nonrobust   LLR p-value:                 7.723e-34
+=========================================================================================================================
+                                                            coef    std err          z      P>|z|      [0.025      0.975]
+-------------------------------------------------------------------------------------------------------------------------
+const                                                    -5.1757      0.161    -32.161      0.000      -5.491      -4.860
+Summer                                                    0.1145      0.148      0.774      0.439      -0.176       0.405
+Winter                                                    0.0851      0.149      0.572      0.567      -0.206       0.376
+Rush_Hrs12to18                                           -0.3623      0.142     -2.554      0.011      -0.640      -0.084
+Night_Hrs21to3                                            0.2803      0.157      1.787      0.074      -0.027       0.588
+BOROUGH_BRONX                                            -0.6697      0.206     -3.249      0.001      -1.074      -0.266
+BOROUGH_QUEENS                                            0.0241      0.146      0.165      0.869      -0.263       0.311
+BOROUGH_MANHATTAN                                        -0.4713      0.180     -2.611      0.009      -0.825      -0.118
+CONTRIBUTING_FACTOR_DRIVER_INATTENTION/DISTRACTION       -0.8427      0.178     -4.733      0.000      -1.192      -0.494
+CONTRIBUTING_FACTOR_ALCOHOL_INVOLVEMENT                   0.5068      0.389      1.302      0.193      -0.256       1.270
+CONTRIBUTING_FACTOR_FOLLOWING_TOO_CLOSELY               -10.6097     48.162     -0.220      0.826    -105.006      83.787
+VEHICLE_TYPE_CODE_STATION_WAGON/SPORT_UTILITY_VEHICLE    -1.2666      0.152     -8.341      0.000      -1.564      -0.969
+VEHICLE_TYPE_CODE_SEDAN                                  -1.5531      0.154    -10.105      0.000      -1.854      -1.252
+VEHICLE_TYPE_CODE_PICK-UP_TRUCK                          -1.2557      0.421     -2.981      0.003      -2.081      -0.430
+=========================================================================================================================
